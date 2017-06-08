@@ -1,0 +1,16 @@
+<section>
+  <div>
+    <input [formControl]="inputField" type="text" placeholder="Search for Arists..." id="keyword" autofocus>
+  </div>
+
+<ul>
+ <li>
+ <div *ngFor="let result of searchResults">
+    <img src ="{{result.images['2']?.url}}" alt="{{result.name}}" width="50" height="50">
+    <p>{{result.name}}</p>
+ </div>
+ </li>
+
+</ul>
+
+</section>

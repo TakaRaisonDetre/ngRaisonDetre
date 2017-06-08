@@ -1,0 +1,61 @@
+ <div class="container">
+ <form (submit)="addNPO()">
+              <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">NPO organization name</div>
+                <div class="col-sm-9">
+                  <input  type="text" placeholder="Name of Organization" [(ngModel)]="name" name="name" class="form-control">
+                  </div>
+              </div>
+               <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">City</div>
+                <div class="col-sm-9">
+                  <input  type="text" placeholder="City" [(ngModel)]="city" name="city" class="form-control">
+                  </div>
+              </div>
+               <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Language</div>
+                <div class="col-sm-9">
+                  <input  type="text" placeholder="language" [(ngModel)]="language" name="language" class="form-control">
+                  </div>
+              </div>
+               <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Summary of Program</div>
+                <div class="col-sm-9">
+                  <input  type="text" placeholder="Description" [(ngModel)]="summary" name="summary" class="form-control">
+                  </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Website</div>
+                <div class="col-sm-9">
+                  <input [(ngModel)]="website" name="website" type="text" placeholder="http://" class="form-control">
+                  </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Category</div>
+                <div class="col-sm-9">
+                  <select [(ngModel)]="category" name="category" class="form-control c-select">
+                    <option value="0">Select</option>
+                     <option *ngFor="let cat of categories" value="{{cat.name}}">{{cat.name}}</option> 
+                  </select>
+                </div>
+              </div>
+              <!--Images-->
+              <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Image</div>
+                <div class="col-sm-9">
+                  <input id="logoimage" type="file"  [(ngModel)]="logoimage" name="logoimage" class="form-control">
+                  <!--<input id="logoimage"  type="file"  class="form-control">-->
+                 
+								  </div>
+              </div>
+							 <!-- Multitple Images-->
+              <!--<div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Image</div>
+                <div class="col-sm-9">
+                  <input  multiple (change)="handler($event)" type="file"  class="form-control">
+                  </div>
+              </div>-->
+              
+                  <input class="btn btn-sm rounded primary" type="submit" value="Submit">
+            </form>
+            </div>

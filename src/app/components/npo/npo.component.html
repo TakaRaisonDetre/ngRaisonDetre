@@ -1,0 +1,12 @@
+<div class="container" *ngIf="npo">
+ <a [routerLink]="['/npos']"> Go Back</a>
+
+ <h2> {{npo.name}}<small>{{npo.city}}</small></h2>
+<br>
+<span><button type="submit" (click)="followthisNPO()" class="btn btn-default">Follow</button></span>
+
+<br><br>
+<p>{{npo.summary}}</p>
+
+
+</div>

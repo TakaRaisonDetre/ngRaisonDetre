@@ -1,0 +1,7 @@
+<div class="container">
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let list of npo">
+    <a [routerLink]="['/npo/' + list.$key]" >{{list.name}}</a>
+  </li>
+</ul>
+</div>
