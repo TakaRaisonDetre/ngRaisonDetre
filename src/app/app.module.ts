@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {HomeComponent} from './home.component'
+// import {HomeComponent} from './home.component'
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routs'
 
@@ -21,6 +21,7 @@ import {SpotifyService} from './services/spotify.service';
 // Service
 import {FirebaseService} from './services/firebase.service';
 import { SearchComponent } from './components/search/search.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const config={
@@ -36,7 +37,7 @@ const config={
     AppComponent,HomeComponent, 
     ProfileComponent, AddNpoComponent, 
     NposComponent, NpoComponent, 
-    FollowersComponent, NavbarComponent, SearchComponent, 
+    FollowersComponent, NavbarComponent, SearchComponent, HomeComponent, 
   ],
   imports: [
     AngularFireModule.initializeApp(config),

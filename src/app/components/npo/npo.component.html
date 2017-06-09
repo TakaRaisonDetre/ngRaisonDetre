@@ -2,6 +2,7 @@
  <a [routerLink]="['/npos']"> Go Back</a>
 
  <h2> {{npo.name}}<small>{{npo.city}}</small></h2>
+ <button  class="btn btn-primary" (click)="openCheckoutOneTime()">checkout one time</button><button  class="btn btn-primary" (click)="openCheckout()">checkout subscription</button>
 <br>
 <span><button type="submit" (click)="followthisNPO()" class="btn btn-default">Follow</button></span>
 

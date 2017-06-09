@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from '../../services/firebase.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {Auth} from '../../auth.service';
+import {Http,Headers} from '@angular/http';
 
 
 @Component({
@@ -18,7 +19,8 @@ profile:any;
   constructor(private firebaseservice: FirebaseService,
   private router: Router,
   private route:ActivatedRoute,
-  private auth:Auth) {
+  private auth:Auth,
+  private http:Http) {
      this.profile = JSON.parse(localStorage.getItem('profile'));
    }
 
@@ -39,6 +41,54 @@ this.firebaseservice.follownpo(currentUserId,currentNpoKey);
 
 
 
+}
+ openCheckout() {
+  
+  let vm=this;
+  
+    var handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_mlThqifXSfVi3vW2A7PdslSQ',
+      locale: 'auto',
+      
+      token: function (token: any) {
+        vm.http.get("https://us-central1-fir-starter-92cbd.cloudfunctions.net/paymentSub?amount=100&currency=usd&token="+token.id).subscribe(res=>{
+          console.log("successfull ",res);
+          
+        })
+      }
+    });
+
+    handler.open({
+      name: 'move now',
+      description: 'Test payment',
+      amount: "100 cent"
+    });
+
+    
+}
+
+  openCheckoutOneTime() {
+  
+  let vm=this;
+  
+    var handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_mlThqifXSfVi3vW2A7PdslSQ',
+      locale: 'auto',
+      token: function (token: any) {
+        vm.http.get("https://us-central1-fir-starter-92cbd.cloudfunctions.net/payment?amount=100&currency=usd&token="+token.id).subscribe(res=>{
+          console.log("successfull ",res);
+          
+        })
+      }
+    });
+
+    handler.open({
+      name: 'move now',
+      description: 'Test payment',
+      amount: "100 cent"
+    });
+
+    
 }
 
 }

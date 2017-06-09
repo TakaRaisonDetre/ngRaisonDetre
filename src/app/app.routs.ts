@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import {HomeComponent} from './home.component'
+import {HomeComponent} from './components/home/home.component'
 import {ProfileComponent} from './components/profile/profile.component';
 import {AddNpoComponent} from './components/add-npo/add-npo.component';
 import {NposComponent} from './components/npos/npos.component';

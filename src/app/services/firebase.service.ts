@@ -3,6 +3,8 @@ import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'ang
 import 'rxjs/add/operator/map';
 // fb storate use
 import * as firebase from 'firebase';
+//Model
+import {Category} from '../models/category';
 import {Npo} from '../models/npo'
 
 @Injectable()
@@ -11,6 +13,8 @@ export class FirebaseService{
  // property
   npos:FirebaseListObservable<any[]>;
   npo: FirebaseObjectObservable<any>;
+  categories:FirebaseListObservable<Category[]>; 
+  
   folder: any;
   folder2:any;
 
@@ -45,7 +49,14 @@ addNpo(newnpo){
  } 
 }
 
+getCategory(){
+   this.categories = this._af.database.list('/categories') as
+    FirebaseListObservable<Category[]>
+    return this.categories;
 
+
+
+}
 
  addNPOImage(newnpo){
  // //create a root ref of storage

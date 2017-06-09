@@ -1,7 +1,18 @@
- <div class="container">
- <form (submit)="addNPO()">
+
+ 
+  <div class="container">
+  
+  <div class="b-t">
+    <div class="center-block w-xxl w-auto-xs p-y-md text-center">
+      <div class="p-a-md">
+        
+        <hr>
+
+      <h5>Enter Your Non-Profit Program Information</h5>
+       <hr>
+       <form (submit)='addNPO()'>
               <div class="form-group row">
-                <div class="col-sm-3 form-control-label text-muted">NPO organization name</div>
+                <div class="col-sm-3 form-control-label text-muted">NPO name</div>
                 <div class="col-sm-9">
                   <input  type="text" placeholder="Name of Organization" [(ngModel)]="name" name="name" class="form-control">
                   </div>
@@ -13,21 +24,54 @@
                   </div>
               </div>
                <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Street Address</div>
+                <div class="col-sm-9">
+                  <input  type="text" placeholder="streetAddress" [(ngModel)]="streetAddress" name="streetAddress" class="form-control">
+                  </div>
+              </div>
+							<div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Country</div>
+                <div class="col-sm-9">
+                  <input  type="text" placeholder="country" [(ngModel)]="country" name="country" class="form-control">
+                  </div>
+              </div>
+								<div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Zip</div>
+                <div class="col-sm-9">
+                  <input  type="text" placeholder="zip" [(ngModel)]="zip" name="zip" class="form-control">
+                  </div>
+              </div>
+              
+							 <div class="form-group row">
                 <div class="col-sm-3 form-control-label text-muted">Language</div>
                 <div class="col-sm-9">
                   <input  type="text" placeholder="language" [(ngModel)]="language" name="language" class="form-control">
                   </div>
               </div>
                <div class="form-group row">
-                <div class="col-sm-3 form-control-label text-muted">Summary of Program</div>
+                <div class="col-sm-3 form-control-label text-muted">Short Description</div>
                 <div class="col-sm-9">
-                  <input  type="text" placeholder="Description" [(ngModel)]="summary" name="summary" class="form-control">
+                  <textarea type="text" placeholder="Description" [(ngModel)]="summary" name="summary" class="form-control"></textarea>
                   </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-3 form-control-label text-muted">Website</div>
                 <div class="col-sm-9">
                   <input [(ngModel)]="website" name="website" type="text" placeholder="http://" class="form-control">
+                  </div>
+              </div>
+							<!--map info (latitude)-->
+							 <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">latitude</div>
+                <div class="col-sm-9">
+                  <input [(ngModel)]="latitude" name="latitude" type="text" placeholder="32.4543434" class="form-control">
+                  </div>
+              </div>
+								<!--map info (longitude)-->
+							 <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">longitude</div>
+                <div class="col-sm-9">
+                  <input [(ngModel)]="longitude" name="longitude" type="text" placeholder="41.34343" class="form-control">
                   </div>
               </div>
               <div class="form-group row">
@@ -48,14 +92,23 @@
                  
 								  </div>
               </div>
-							 <!-- Multitple Images-->
-              <!--<div class="form-group row">
-                <div class="col-sm-3 form-control-label text-muted">Image</div>
-                <div class="col-sm-9">
-                  <input  multiple (change)="handler($event)" type="file"  class="form-control">
-                  </div>
-              </div>-->
-              
-                  <input class="btn btn-sm rounded primary" type="submit" value="Submit">
-            </form>
-            </div>
+							
+          <div class="m-b-md text-sm">
+            <span class="text-muted">By clicking Sign Up, I agree to the</span> 
+            <a href="#">NPO Terms of service</a> 
+            <span class="text-muted">and</span> 
+            <a href="#">Policy Privacy.</a>
+          </div>
+          <br>
+          <br>
+          <input type="submit" value="Start Raise Funds with Artists" class="btn btn-lg black p-x-lg">
+        </form>
+
+       </div>
+      
+      </div>
+    </div>
+  
+ 
+  </div>
+  
