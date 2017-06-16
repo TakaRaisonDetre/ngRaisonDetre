@@ -24,7 +24,7 @@ import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
 
 
-const config = {
+export const config = {
   apiKey: 'AIzaSyCamsDPXHFePQ8e4iL43nZZ-LZdTI3G1to',
   authDomain: 'mprototype-e0f50.firebaseapp.com',
   databaseURL: 'https://mprototype-e0f50.firebaseio.com',
@@ -32,6 +32,8 @@ const config = {
   storageBucket: 'mprototype-e0f50.appspot.com',
   messagingSenderId: '963346300299'
 };
+
+
 @NgModule( {
   declarations: [
     AppComponent, HomeComponent,
@@ -40,7 +42,7 @@ const config = {
     FollowersComponent, NavbarComponent, SearchComponent, HomeComponent,
   ],
   imports: [
-    AngularFireModule.initializeApp( config ),
+    AngularFireModule.initializeApp(config ),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -51,3 +53,4 @@ const config = {
 } )
 export class AppModule {
 }
+
