@@ -22,16 +22,9 @@ import { SpotifyService } from './services/spotify.service';
 import { FirebaseService } from './services/firebase.service';
 import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
+import { config } from '../../firebase-config';
 
 
-export const config = {
-  apiKey: 'AIzaSyCamsDPXHFePQ8e4iL43nZZ-LZdTI3G1to',
-  authDomain: 'mprototype-e0f50.firebaseapp.com',
-  databaseURL: 'https://mprototype-e0f50.firebaseio.com',
-  projectId: 'mprototype-e0f50',
-  storageBucket: 'mprototype-e0f50.appspot.com',
-  messagingSenderId: '963346300299'
-};
 
 
 @NgModule( {
