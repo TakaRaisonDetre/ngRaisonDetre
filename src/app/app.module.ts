@@ -24,9 +24,6 @@ import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
 import { config } from '../../firebase-config';
 
-
-
-
 @NgModule( {
   declarations: [
     AppComponent, HomeComponent,
